@@ -6,7 +6,7 @@ include('includes/general.php');
 include('includes/header.php');
 ?>
 <div class="box-join">
-    <h2>Đăng ký/ Đăng nhập</h2>
+    <h2>Đăng ký / Đăng nhập</h2>
     <form method="POST" id="formJoin" onsubmit="return false;">
         <input type="text" placeholder="Tên đăng nhập" class="data-input" id="username" >
         <br />
