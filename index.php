@@ -9,6 +9,5 @@
 <body>
     <h1>Hello world</h1>
     <h1>Tuan Pham GDIT</h1>
-    <h1>dm phá đám vl</h1>
 </body>
 </html>
