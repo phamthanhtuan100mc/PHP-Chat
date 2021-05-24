@@ -10,6 +10,6 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div class="main-header">
+        <div class="main-navbar">
             <h1><i class="fa fa-commenting"></i> PHP Chat messenger</h1>
         </div>
