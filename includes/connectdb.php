@@ -4,7 +4,7 @@
  * Localhost test
  */
 // $namehost = "localhost";
-// $userhost = "user";
+// $userhost = "root";
 // $passhost = "";
 // $database = "php_chat";
 
