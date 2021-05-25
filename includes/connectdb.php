@@ -26,5 +26,4 @@ if (!$cn) {
     echo "Could not connect to database!";
 }
 
-
 ?>
