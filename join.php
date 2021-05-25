@@ -62,14 +62,6 @@ else {
         else {
             $password = md5($password);
             // Thêm thông tin người dùng vào table users 
-            $test = "INSERT INTO `users`(`username`, `password`, `date_created`) VALUES (
-                '$username',
-                '$password',
-                '$date_current'
-            )";
-            echo "<pre>";
-            var_dump($test);
-            die;
             $query_create_user = mysqli_query($cn, "INSERT INTO `users`(`username`, `password`, `date_created`) VALUES (
                 '$username',
                 '$password',
