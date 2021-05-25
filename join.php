@@ -25,7 +25,7 @@ $query_check_exist_user = mysqli_query($cn, "SELECT * FROM users WHERE username 
 // Nếu username hoặc password trống
 if($username == "" || $password == "") {
     // Thông báo lỗi
-    echo $show_alert . "Vui lòng điền đầy đủ thông tin bên trên!";
+    echo $show_alert . $fail_alert . "Vui lòng điền đầy đủ thông tin bên trên!";
 }
 else {
     // Nếu tồn tại username thì thực thi đăng nhập
