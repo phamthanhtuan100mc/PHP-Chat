@@ -16,6 +16,8 @@ $show_alert = '<script>$("#formJoin .alert").show();</script>';
 $hide_alert = '<script>$("#formJoin .alert").hide();</script>';
 // Thông báo thành công
 $success_alert = '<script>$("#formJoin .alert").attr("class", "alert success");</script>';
+// Thông báo thất bại
+$fail_alert = '<script>$("#formJoin .alert").attr("class", "alert danger");</script>';
 
 // Kiểm tra có tồn tại username
 $query_check_exist_user = mysqli_query($cn, "SELECT * FROM users WHERE username = '$username'");
@@ -39,29 +41,28 @@ else {
             // echo '<script>window.location.reload();</script>'; // Tải lại trang
         }
         else {
-            echo $show_alert . 'Tên đăng nhập hoặc mật khẩu không chính xác!';
+            echo $show_alert . $fail_alert . 'Tên đăng nhập hoặc mật khẩu không chính xác!';
         }
     }
     // Tiến hành đăng ký tài khoản
     else {
         // Nếu độ dài username < 6 hoặc > 40
         if (strlen($username) < 6 || strlen($username) > 40) {
-            echo $show_alert . 'Tên đăng nhập trong khoảng từ 6-40 ký tự!'; 
+            echo $show_alert . $fail_alert . 'Tên đăng nhập trong khoảng từ 6-40 ký tự!'; 
         }
         // Nếu username chứa khoảng trắng và ký tự đặc biệt
         else if (preg_match('/\W/', $username)) {
-            echo $show_alert . 'Tên đăng nhập không chứa khoảng trắng và ký tự đặc biệt.';
+            echo $show_alert . $fail_alert . 'Tên đăng nhập không chứa khoảng trắng và ký tự đặc biệt.';
         }
         // Nếu độ dài password < 6
         else if (strlen($password) < 6) {
-            echo $show_alert . 'Mật khẩu của bạn quá ngắn, hãy thử lại với mật khẩu khác an toàn hơn.';
+            echo $show_alert . $fail_alert . 'Mật khẩu của bạn quá ngắn, hãy thử lại với mật khẩu khác an toàn hơn.';
         }
         // Không mắc các lỗi trên thì insert vào table
         else {
             $password = md5($password);
             // Thêm thông tin người dùng vào table users 
-            $query_create_user = mysqli_query($cn, "INSERT INTO users VALUES (
-                '',
+            $query_create_user = mysqli_query($cn, "INSERT INTO `users`(`username`, `password`, `date_created`) VALUES (
                 '$username',
                 '$password',
                 '$date_current'
