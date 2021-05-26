@@ -47,7 +47,7 @@ else {
     // Tiến hành đăng ký tài khoản
     else {
         // Nếu độ dài username < 6 hoặc > 40
-        if (strlen($username) < 6 || strlen($username) > 40) {
+        if (strlen($username) > 40) {
             echo $show_alert . $fail_alert . 'Tên đăng nhập trong khoảng từ 6-40 ký tự!'; 
         }
         // Nếu username chứa khoảng trắng và ký tự đặc biệt
