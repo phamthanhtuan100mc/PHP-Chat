@@ -1,9 +1,9 @@
 <?php
 
-// Nếu tồn tại $user
-if ($user) {
-    header('Location: index.php'); // Di chuyển đến file index.php
-}
+// // Nếu tồn tại $user
+// if ($user) {
+//     header('Location: index.php'); // Di chuyển đến file index.php
+// }
 
 // Kết nối database, lấy dữ liệu chung
 include_once("includes/general.php");
@@ -53,7 +53,7 @@ else {
     else {
         // Nếu độ dài username < 6 hoặc > 40
         if (strlen($username) > 40) {
-            echo $show_alert . $fail_alert . 'Tên đăng nhập trong khoảng từ 6-40 ký tự!'; 
+            echo $show_alert . $fail_alert . 'Tên đăng nhập dưới 40 ký tự!'; 
         }
         // Nếu username chứa khoảng trắng và ký tự đặc biệt
         else if (preg_match('/\W/', $username)) {

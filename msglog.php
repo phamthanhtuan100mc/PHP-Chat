@@ -1,9 +1,9 @@
 <?php
 
 // Nếu không tồn tại $user
-if (!$user) {
-    header('Location: index.php'); // Di chuyển đến file index.php
-}
+// if (!$user) {
+//     header('Location: index.php'); // Di chuyển đến file index.php
+// }
 
 // Kết nối database, lấy dữ liệu chung
 include('includes/general.php');
