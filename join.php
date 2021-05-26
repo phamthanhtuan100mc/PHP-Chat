@@ -38,7 +38,7 @@ else {
         if (mysqli_num_rows($query_check_login)) {
             echo $show_alert . $success_alert . 'Đăng nhập thành công.'; // Thông báo
             $_SESSION['username'] = $username; // Lưu session giá trị username
-            // echo '<script>window.location.reload();</script>'; // Tải lại trang
+            echo '<script>window.location.reload();</script>'; // Tải lại trang
         }
         else {
             echo $show_alert . $fail_alert . 'Tên đăng nhập hoặc mật khẩu không chính xác!';
@@ -70,7 +70,7 @@ else {
             echo $show_alert . $success_alert . 'Đăng ký tài khoản thành công.';
             $_SESSION['username'] = $username; // Lưu session giá trị username
             // Tải lại trang
-            // echo '<script>window.location.reload();</script>';
+            echo '<script>window.location.reload();</script>';
         }
     }
 }

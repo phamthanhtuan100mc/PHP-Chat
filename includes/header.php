@@ -11,6 +11,21 @@
         <link rel="stylesheet" href="css/style.css"/>
     </head>
     <body>
-        <div class="main-navbar">
-            <h1><i class="fa fa-commenting"></i> PHP Chat messenger</h1>
-        </div>
+        <?php
+        // Nếu tồn tại $user
+        if ($user) {
+            // Hiển thị menu
+            echo '<div class="main-menu">
+                            <h1><i class="fa fa-commenting"></i> PHP Chat group messenger</h1>
+                            <a href="logout.php"><i class="fa fa-sign-out"></i></a> 
+                    </div>
+                    <div class="clearfix"></div>';
+        }
+        // Ngược lại
+        else {
+            // Hiển thị navbar
+            echo '  <div class="main-navbar">
+                            <h1><i class="fa fa-commenting"></i> PHP Chat group messenger</h1>
+                    </div><!-- div.main-header -->';
+        }
+        ?>

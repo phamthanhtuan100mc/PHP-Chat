@@ -3,18 +3,18 @@
 /**
  * Localhost test
  */
-// $namehost = "localhost";
-// $userhost = "root";
-// $passhost = "";
-// $database = "php_chat";
+$namehost = "localhost";
+$userhost = "root";
+$passhost = "";
+$database = "php_chat";
 
 /**
  * Deploy enviroment test
  */
-$namehost = "remotemysql.com";
-$userhost = "zWpqC9MXp2";
-$passhost = "fGyMNzkmSE";
-$database = "zWpqC9MXp2";
+// $namehost = "remotemysql.com";
+// $userhost = "zWpqC9MXp2";
+// $passhost = "fGyMNzkmSE";
+// $database = "zWpqC9MXp2";
 
 
 

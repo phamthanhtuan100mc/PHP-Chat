@@ -4,8 +4,20 @@
 include('includes/general.php');
 // Kết nối header
 include('includes/header.php');
-?>
-<div class="box-join">
+
+// Nếu tồn tại $user
+if ($user) {
+    // Hiển thị trò chuyện
+    echo '  <div class="main-chat">
+            </div>
+            <div class="box-chat">
+                <form method="POST" id="formSendMsg" onsubmit="return false;">
+                    <input type="text" placeholder="Aa">
+                </form>
+            </div>';
+}
+else {
+echo '<div class="box-join">
     <h2>Đăng ký / Đăng nhập</h2>
     <form method="POST" id="formJoin" onsubmit="return false;">
         <input type="text" placeholder="Tên đăng nhập" class="data-input" id="username" >
@@ -15,8 +27,8 @@ include('includes/header.php');
         <button class="btn-submit">Bắt đầu</button>
         <div class="alert danger"></div>
     </form>
-</div>
-<?php
+</div>';
+}
 // Kết nối footer
 include('includes/footer.php');
 
