@@ -1,12 +1,12 @@
 <?php
 
-// Nếu không tồn tại $user
-// if (!$user) {
-//     header('Location: index.php'); // Di chuyển đến file index.php
-// }
-
 // Kết nối database, lấy dữ liệu chung
 include('includes/general.php');
+
+// Nếu không tồn tại $user
+if (!$user) {
+    header('Location: index.php'); // Di chuyển đến file index.php
+}
 
 // Lấy dữ liệu từ table messages theo thứ tự id_msg tăng dần
 $sql = "SELECT * FROM messages ORDER BY id_msg ASC";

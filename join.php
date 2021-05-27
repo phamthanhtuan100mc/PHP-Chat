@@ -1,12 +1,12 @@
 <?php
 
-// // Nếu tồn tại $user
-// if ($user) {
-//     header('Location: index.php'); // Di chuyển đến file index.php
-// }
-
 // Kết nối database, lấy dữ liệu chung
 include_once("includes/general.php");
+
+// Nếu tồn tại $user
+if ($user) {
+    header('Location: index.php'); // Di chuyển đến file index.php
+}
 
 // Khai báo các biến nhận dữ liệu
 $username = @mysqli_real_escape_string($cn, $_POST["username"]);

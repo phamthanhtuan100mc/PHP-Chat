@@ -1,12 +1,12 @@
 <?php
 
-// Nếu không tồn tại $user
-// if (!$user) {
-//     header('Location: index.php'); // Di chuyển đến file index.php
-// }
-
 // Kết nối database, lấy dữ liệu chung
 include('includes/general.php');
+
+// Nếu không tồn tại $user
+if (!$user) {
+    header('Location: index.php'); // Di chuyển đến file index.php
+}
 
 // Khai báo các biến gán với dữ liệu nhận được
 $body_msg = @mysqli_real_escape_string($cn, $_POST['body_msg']);
