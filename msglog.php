@@ -39,3 +39,9 @@ while ($row = mysqli_fetch_assoc($query_get_msg)) {
 }
 
 ?>
+
+<script>
+        if ($jump_to_end == true) {
+                window.scrollBy(0, $(document).height())
+        }
+</script>

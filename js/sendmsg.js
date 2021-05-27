@@ -27,7 +27,5 @@ $('#formSendMsg input[type="text"]').keypress(function() {
     if (keycode == '13') {
         // Chạy hàm gửi tin nhắn
         sendMsg();
-        // Kéo hết thanh cuộn trình duyệt đến cuối
-        window.scrollBy(0, $(document).height());
     }
 });
