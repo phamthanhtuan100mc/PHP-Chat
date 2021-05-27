@@ -20,10 +20,13 @@ else {
 echo '<div class="box-join">
     <h2>Đăng ký / Đăng nhập</h2>
     <form method="POST" id="formJoin" onsubmit="return false;">
-        <input type="text" placeholder="Tên đăng nhập" class="data-input" id="username" >
+        <input type="text" placeholder="Email/Tên đăng nhập" class="data-input" id="username" >
         <br />
         <input type="password" placeholder="Mật khẩu" class="data-input" id="password" >
         <br />
+        <p style="padding-left: 207px;">
+            <a href="reset_password.php">Quên mật khẩu</a>
+        </p>
         <button class="btn-submit">Bắt đầu</button>
         <div class="alert danger"></div>
     </form>
