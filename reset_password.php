@@ -36,11 +36,8 @@ if (isset($_POST['mail'])) {
             $save_pwd = md5($new_pwd);
 
             $mail = new PHPMailer\PHPMailer\PHPMailer();
-            // $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';  		
-            $mail->Mailer = "smtp";
-            $mail->SMTPAuth = true;
-            $Mail->Priority = 1;	  
+            $mail->isSMTP();                                      
+            $mail->Host = 'smtp.gmail.com';  					  
             $mail->Port = '587';  					  
             $mail->SMTPAuth = true;                               
             $mail->Username = 'phmthtuan@gmail.com';
