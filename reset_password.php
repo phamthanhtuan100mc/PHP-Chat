@@ -38,7 +38,6 @@ if (isset($_POST['mail'])) {
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             // $mail->isSMTP();
             $mail->Host = 'ssl://smtp.gmail.com';  		
-            $mail->SMTPDebug = 2;		
             $mail->Mailer = "smtp";
             $mail->SMTPAuth = true;
             $Mail->Priority = 1;	  
