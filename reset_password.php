@@ -36,7 +36,14 @@ if (isset($_POST['mail'])) {
             $save_pwd = md5($new_pwd);
 
             $mail = new PHPMailer\PHPMailer\PHPMailer();
-            // $mail->isSMTP();                                      
+            $mail->isSMTP();
+            $mail->SMTPOptions = array(
+                'ssl' => array(
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                    'allow_self_signed' => true
+                )
+            );                                  
             $mail->Host = 'smtp.gmail.com';  					  
             $mail->Port = '587';  					  
             $mail->SMTPAuth = true;                               
