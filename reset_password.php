@@ -31,8 +31,6 @@ if (isset($_POST['mail'])) {
             $new_pwd = generateRandomString();
             $save_pwd = md5($new_pwd);
             
-            
-            
             $headers = "Content-type:text/html;charset=UTF-8" . "\r\n"; 
             $headers .= "From: PHP CHAT GROUP";
             $subject = "Reset password";
@@ -53,7 +51,6 @@ if (isset($_POST['mail'])) {
                 </table> 
             </body> 
             </html>'; 
-            
         
             if (mail($email_reset, $subject, $body, $headers)) {
                 // Update new password
@@ -68,7 +65,7 @@ if (isset($_POST['mail'])) {
             die;
         }
         else {
-            echo "Email không tồn tại!";
+            echo "Email chưa được đăng ký!";
         }
     }   
     else {
