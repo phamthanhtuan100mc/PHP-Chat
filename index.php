@@ -18,9 +18,9 @@ if ($user) {
 }
 else {
 echo '<div class="box-join">
-    <h2>Đăng ký / Đăng nhập</h2>
+    <h2><strong>Nhập Email để bắt đầu</strong></h2>
     <form method="POST" id="formJoin" onsubmit="return false;">
-        <input type="text" placeholder="Tên đăng nhập" class="data-input" id="username" >
+        <input type="text" placeholder="Email" class="data-input" id="username" >
         <br />
         <input type="password" placeholder="Mật khẩu" class="data-input" id="password" >
         <br />

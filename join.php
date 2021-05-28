@@ -51,13 +51,9 @@ else {
     }
     // Tiến hành đăng ký tài khoản
     else {
-        // Nếu độ dài username < 6 hoặc > 40
-        if (strlen($username) > 40) {
-            echo $show_alert . $fail_alert . 'Tên đăng nhập dưới 40 ký tự!'; 
-        }
         // Nếu username chứa khoảng trắng và ký tự đặc biệt
-        else if (preg_match('/\W/', $username)) {
-            echo $show_alert . $fail_alert . 'Tên đăng nhập không chứa khoảng trắng và ký tự đặc biệt.';
+        if (!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+            echo $show_alert . $fail_alert . 'Email không hợp lệ!';
         }
         // Nếu độ dài password < 6
         else if (strlen($password) < 6) {
