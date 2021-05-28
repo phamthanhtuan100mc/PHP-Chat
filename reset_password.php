@@ -37,7 +37,8 @@ if (isset($_POST['mail'])) {
 
             $mail = new PHPMailer\PHPMailer\PHPMailer();
             $mail->isSMTP();                                      
-            $mail->Host = 'smtp.gmail.com';  					  
+            // $mail->Host = 'smtp.gmail.com';  
+            $mail->Host = gethostbyname('smtp.gmail.com');					  
             $mail->Port = '587';  					  
             $mail->SMTPAuth = true;                               
             $mail->Username = 'phmthtuan@gmail.com';
