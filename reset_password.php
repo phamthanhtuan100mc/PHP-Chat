@@ -31,10 +31,7 @@ if (isset($_POST['mail'])) {
             $new_pwd = generateRandomString();
             $save_pwd = md5($new_pwd);
             
-            $sql = "UPDATE users SET password='$save_pwd' WHERE username='$email_reset'";
-           
-            // Update new password
-            mysqli_query($cn, $sql);
+            
             
             $headers = "Content-type:text/html;charset=UTF-8" . "\r\n"; 
             $headers .= "From: PHP CHAT GROUP";
@@ -59,7 +56,12 @@ if (isset($_POST['mail'])) {
             
         
             if (mail($email_reset, $subject, $body, $headers)) {
+                // Update new password
+                $sql = "UPDATE users SET password='$save_pwd' WHERE username='$email_reset'";
+                mysqli_query($cn, $sql);
+
                 echo "Email successfully sent to $email_reset...";
+
             } else {
                 echo "Email sending failed...";
             }
