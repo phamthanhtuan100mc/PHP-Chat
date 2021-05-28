@@ -8,6 +8,10 @@ if ($user) {
     header('Location: index.php'); // Di chuyển đến file index.php
 }
 
+require('resource/PHPMailer/src/Exception.php');
+require('resource/PHPMailer/src/PHPMailer.php');
+require('resource/PHPMailer/src/SMTP.php');
+
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
@@ -30,11 +34,22 @@ if (isset($_POST['mail'])) {
 
             $new_pwd = generateRandomString();
             $save_pwd = md5($new_pwd);
+
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+            $mail->isSMTP();                                      
+            $mail->Host = 'smtp.gmail.com';  					  
+            $mail->Port = '587';  					  
+            $mail->SMTPAuth = true;                               
+            $mail->Username = 'phmthtuan@gmail.com';
+            $mail->Password = 'gjgj4157';
+            $mail->SMTPSecure = 'tls';
+            $mail->addAddress($email_reset);
+            $mail->From = 'tuan.pt@gdit.com';
+            $mail->FromName = 'PHP Chat group';
+            $mail->isHTML(true);
             
-            $headers = "Content-type:text/html;charset=UTF-8" . "\r\n"; 
-            $headers .= "From: PHP CHAT GROUP";
-            $subject = "Reset password";
-            $body = '
+            $mail->Subject = 'Reset password';
+            $mail->Body    = '
             <html> 
             <head> 
                 <title>Welcome to CodexWorld</title> 
@@ -50,19 +65,17 @@ if (isset($_POST['mail'])) {
                     </tr> 
                 </table> 
             </body> 
-            </html>'; 
-        
-            if (mail($email_reset, $subject, $body, $headers)) {
-                // Update new password
+            </html>';
+            
+            if(!$mail->send()) {
+                echo 'Message could not be sent.';
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
                 $sql = "UPDATE users SET password='$save_pwd' WHERE username='$email_reset'";
                 mysqli_query($cn, $sql);
 
                 echo "Email successfully sent to $email_reset...";
-
-            } else {
-                echo "Email sending failed...";
             }
-            die;
         }
         else {
             echo "Email chưa được đăng ký!";
